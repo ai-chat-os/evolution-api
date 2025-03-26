@@ -49,8 +49,7 @@ services:
 
   postgres:
     container_name: postgres
-    build:
-      context: .postgres/
+    image: percona/percona-distribution-postgresql:16.8
     networks:
       - evolution-net
     command: ["postgres", "-c", "max_connections=1000", "-c", "listen_addresses=*"]
