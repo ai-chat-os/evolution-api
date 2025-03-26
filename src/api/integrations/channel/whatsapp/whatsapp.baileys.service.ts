@@ -664,7 +664,7 @@ export class BaileysStartupService extends ChannelStartupService {
 
         return isGroupJid || isBroadcast || isNewsletter;
       },
-        syncFullHistory: this.localSettings.syncFullHistory,
+      syncFullHistory: this.localSettings.syncFullHistory,
       shouldSyncHistoryMessage: (msg: proto.Message.IHistorySyncNotification) => {
         return this.historySyncNotification(msg);
       },
