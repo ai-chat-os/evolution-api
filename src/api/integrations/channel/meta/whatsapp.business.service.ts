@@ -511,12 +511,6 @@ export class BusinessStartupService extends ChannelStartupService {
           }
         }
 
-        // if (!this.isMediaMessage(received?.messages[0])) {
-        //   await this.prismaRepository.message.create({
-        //     data: messageRaw,
-        //   });
-        // }
-
         const contact = await this.prismaRepository.contact.findFirst({
           where: { instanceId: this.instanceId, remoteJid: key.remoteJid },
         });
@@ -943,10 +937,6 @@ export class BusinessStartupService extends ChannelStartupService {
           msg: messageRaw,
           pushName: messageRaw.pushName,
         });
-
-      // await this.prismaRepository.message.create({
-      //   data: messageRaw,
-      // });
 
       return messageRaw;
     } catch (error) {
